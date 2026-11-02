@@ -3,8 +3,8 @@
 
 function init() {
 /* -- Fallback: mark images that fail to load ----------------- */
-document.querySelectorAll('.image:not([data-init]) > img').forEach((img) => {
-  img.closest('.image').dataset.init = '';
+document.querySelectorAll('.image:not([data-shadcn-init]) > img').forEach((img) => {
+  img.closest('.image').dataset.shadcnInit = '';
 
   if (img.complete && img.naturalWidth === 0) {
     img.dataset.error = '';

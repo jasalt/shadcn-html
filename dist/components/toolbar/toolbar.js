@@ -3,8 +3,8 @@
 // Arrow keys move focus between focusable children.
 
 function init() {
-  document.querySelectorAll('.toolbar[role="toolbar"]:not([data-init])').forEach((toolbar) => {
-  toolbar.dataset.init = '';
+  document.querySelectorAll('.toolbar[role="toolbar"]:not([data-shadcn-init])').forEach((toolbar) => {
+  toolbar.dataset.shadcnInit = '';
   const items = Array.from(
     toolbar.querySelectorAll('button:not(:disabled), a[href], [tabindex]:not([tabindex="-1"])')
   );

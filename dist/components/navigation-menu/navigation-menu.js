@@ -2,8 +2,8 @@
 // CSS anchor positioning for dropdown navigation menus.
 
 function init() {
-  document.querySelectorAll('.nav-menu:not([data-init])').forEach((nav) => {
-  nav.dataset.init = '';
+  document.querySelectorAll('.nav-menu:not([data-shadcn-init])').forEach((nav) => {
+  nav.dataset.shadcnInit = '';
   nav.querySelectorAll('.nav-menu-trigger[popovertarget]').forEach((trigger) => {
     const id = trigger.getAttribute('popovertarget');
     const content = document.getElementById(id);

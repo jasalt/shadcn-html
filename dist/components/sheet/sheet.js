@@ -2,8 +2,8 @@
 // Wires [data-sheet-trigger] buttons to <dialog class="sheet"> elements.
 
 function init() {
-document.querySelectorAll('[data-sheet-trigger]:not([data-init])').forEach((trigger) => {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-sheet-trigger]:not([data-shadcn-init])').forEach((trigger) => {
+  trigger.dataset.shadcnInit = '';
   const sheet = document.getElementById(trigger.dataset.sheetTrigger);
   if (!sheet) return;
   trigger.addEventListener('click', () => {
@@ -11,8 +11,8 @@ document.querySelectorAll('[data-sheet-trigger]:not([data-init])').forEach((trig
     sheet.showModal();
   });
 });
-document.querySelectorAll('dialog.sheet:not([data-init])').forEach((sheet) => {
-  sheet.dataset.init = '';
+document.querySelectorAll('dialog.sheet:not([data-shadcn-init])').forEach((sheet) => {
+  sheet.dataset.shadcnInit = '';
   sheet.addEventListener('click', (e) => {
     if (e.target === sheet) sheet.close();
   });

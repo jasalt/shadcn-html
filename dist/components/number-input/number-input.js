@@ -2,8 +2,8 @@
 // Increment/decrement buttons for .number-input containers.
 
 function init() {
-  document.querySelectorAll('.number-input:not([data-init])').forEach((wrapper) => {
-  wrapper.dataset.init = '';
+  document.querySelectorAll('.number-input:not([data-shadcn-init])').forEach((wrapper) => {
+  wrapper.dataset.shadcnInit = '';
   const input = wrapper.querySelector('input[type="number"]');
   const decBtn = wrapper.querySelector('[data-action="decrement"]');
   const incBtn = wrapper.querySelector('[data-action="increment"]');

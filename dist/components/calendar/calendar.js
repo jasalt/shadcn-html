@@ -66,8 +66,8 @@ const renderCalendar = (el, year, month, selectedDay) => {
 };
 
 function init() {
-document.querySelectorAll('.calendar:not([data-init])').forEach((cal) => {
-    cal.dataset.init = '';
+document.querySelectorAll('.calendar:not([data-shadcn-init])').forEach((cal) => {
+    cal.dataset.shadcnInit = '';
     const now = new Date();
     const state = {
       year: now.getFullYear(),

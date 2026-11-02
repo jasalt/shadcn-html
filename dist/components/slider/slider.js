@@ -9,8 +9,8 @@ function updateSliderValue(el) {
 }
 
 function init() {
-  document.querySelectorAll('.slider:not([data-init])').forEach((el) => {
-    el.dataset.init = '';
+  document.querySelectorAll('.slider:not([data-shadcn-init])').forEach((el) => {
+    el.dataset.shadcnInit = '';
     updateSliderValue(el);
     el.addEventListener('input', () => updateSliderValue(el));
   });

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>shadcn-html + Datastar</title>
+  <link rel="stylesheet" href="../dist/theme/default-semantic-tokens.css">
+  <link rel="stylesheet" href="../dist/components/button/button.css">
+  <link rel="stylesheet" href="../dist/components/toggle/toggle.css">
+  <link rel="stylesheet" href="../dist/components/toast/toast.css">
+  <style>
+    body { max-inline-size: 48rem; margin: 3rem auto; padding-inline: 1rem;
+      background: var(--background); color: var(--foreground); font-family: system-ui; }
+    section { margin-block: 2rem; }
+  </style>
+  <script type="module" src="../dist/components/toggle/toggle.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.4/bundles/datastar-rocket.js"></script>
+</head>
+<body data-signals="{count: 0}">
+  <h1>shadcn-html + Datastar</h1>
+  <p>Vanilla component behavior and Datastar bindings coexist. No component rewrite or CSS fork.</p>
+  <section aria-labelledby="toggle-heading">
+    <h2 id="toggle-heading">Vanilla component</h2>
+    <button id="demo-toggle" type="button" class="toggle" aria-pressed="false">Pin item</button>
+    <p>The component owns <code>aria-pressed</code> and writes only <code>data-shadcn-init</code>.</p>
+  </section>
+  <section aria-labelledby="signal-heading">
+    <h2 id="signal-heading">Datastar state</h2>
+    <button id="increment" type="button" class="btn" data-on:click="$count++">Increment</button>
+    <p>Count: <output id="count" data-text="$count">0</output></p>
+  </section>
+  <section aria-labelledby="toast-heading">
+    <h2 id="toast-heading">CSS-only toast</h2>
+    <button id="show-toast" type="button" class="btn" popovertarget="feedback">Show feedback</button>
+    <!-- No toast.js: native popover + Datastar own this widget's behavior. -->
+    <div id="feedback" class="toast" popover="manual" data-init="el.showPopover()">
+      <div class="toast-content">
+        <div class="toast-title">Datastar initialized</div>
+        <div class="toast-description">This non-empty data-init belongs to Datastar.</div>
+      </div>
+      <button id="dismiss-toast" type="button" class="btn" data-on:click="el.closest('.toast').hidePopover()">Dismiss</button>
+    </div>
+  </section>
+  <p><a href="../DATASTAR.md">Integration notes and DOM patch lifecycle limitations</a></p>
+</body>
+</html>

@@ -411,8 +411,8 @@ const renderCalendar = (el, year, month, selectedDay) =&gt; {
 };
 
 function init() {
-document.querySelectorAll('.calendar:not([data-init])').forEach((cal) =&gt; {
-    cal.dataset.init = '';
+document.querySelectorAll('.calendar:not([data-shadcn-init])').forEach((cal) =&gt; {
+    cal.dataset.shadcnInit = '';
     const now = new Date();
     const state = {
       year: now.getFullYear(),

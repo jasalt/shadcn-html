@@ -325,8 +325,8 @@
 
 function init() {
 /* Wire triggers */
-document.querySelectorAll('[data-alert-dialog-trigger]:not([data-init])').forEach((trigger) =&gt; {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-alert-dialog-trigger]:not([data-shadcn-init])').forEach((trigger) =&gt; {
+  trigger.dataset.shadcnInit = '';
   const dialog = document.getElementById(trigger.dataset.alertDialogTrigger);
   if (!dialog) return;
   trigger.addEventListener('click', () =&gt; {
@@ -336,8 +336,8 @@ document.querySelectorAll('[data-alert-dialog-trigger]:not([data-init])').forEac
 });
 
 /* Wire close buttons and block Escape */
-document.querySelectorAll('dialog.alert-dialog:not([data-init])').forEach((dialog) =&gt; {
-  dialog.dataset.init = '';
+document.querySelectorAll('dialog.alert-dialog:not([data-shadcn-init])').forEach((dialog) =&gt; {
+  dialog.dataset.shadcnInit = '';
   /* Block Escape key */
   dialog.addEventListener('cancel', (e) =&gt; {
     e.preventDefault();

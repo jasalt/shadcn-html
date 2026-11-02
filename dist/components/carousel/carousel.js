@@ -3,8 +3,8 @@
 // dot indicators, loop, autoplay, and ARIA.
 
 function init() {
-document.querySelectorAll('.carousel:not([data-init])').forEach((carousel) => {
-  carousel.dataset.init = '';
+document.querySelectorAll('.carousel:not([data-shadcn-init])').forEach((carousel) => {
+  carousel.dataset.shadcnInit = '';
 
   const viewport = carousel.querySelector('.carousel-viewport');
   const prevBtn = carousel.querySelector('.carousel-prev');

@@ -5,6 +5,7 @@
   "description": "The AI prototyping substrate — themeable semantic HTML, modern CSS, vanilla JS",
   "scripts": {
     "dev": "vite",
+    "test": "node --test scripts/test-datastar-compat.js",
     "push": "./scripts/push.sh",
     "deploy": "./scripts/deploy.sh",
     "deploy:minor": "./scripts/deploy.sh minor",

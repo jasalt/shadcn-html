@@ -15,8 +15,8 @@ const activateTab = (tab, triggers) => {
 };
 
 function init() {
-document.querySelectorAll('[role="tablist"]:not([data-init])').forEach((tablist) => {
-    tablist.dataset.init = '';
+document.querySelectorAll('[role="tablist"]:not([data-shadcn-init])').forEach((tablist) => {
+    tablist.dataset.shadcnInit = '';
     if (!tablist.querySelector('.tab-trigger')) return;
     const triggers = Array.from(tablist.querySelectorAll('[role="tab"]'));
     const orientation = tablist.getAttribute('aria-orientation') || 'horizontal';

@@ -254,8 +254,8 @@
     </div>
     <pre style="border-radius:0;border:none;"><code class="language-javascript"><span class="dim">// dialog.js — wire interactivity</span>
 function init() {
-  document.querySelectorAll('[data-dialog-trigger]:not([data-init])').forEach((trigger) =&gt; {
-    trigger.dataset.init = '';
+  document.querySelectorAll('[data-dialog-trigger]:not([data-shadcn-init])').forEach((trigger) =&gt; {
+    trigger.dataset.shadcnInit = '';
     const dialog = document.getElementById(trigger.dataset.dialogTrigger);
     if (!dialog) return;
     trigger.addEventListener('click', () =&gt; dialog.showModal());

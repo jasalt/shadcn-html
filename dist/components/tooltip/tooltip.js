@@ -20,8 +20,8 @@ function scheduleGroupReset() {
 }
 
 function init() {
-document.querySelectorAll('[data-tooltip-trigger]:not([data-init])').forEach((trigger) => {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-tooltip-trigger]:not([data-shadcn-init])').forEach((trigger) => {
+  trigger.dataset.shadcnInit = '';
   const tip = document.getElementById(trigger.dataset.tooltipTrigger);
   if (!tip) return;
 

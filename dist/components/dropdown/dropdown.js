@@ -3,8 +3,8 @@
 // full keyboard navigation and ARIA support.
 
 function init() {
-  document.querySelectorAll('[data-dropdown-trigger]:not([data-init])').forEach((trigger) => {
-    trigger.dataset.init = '';
+  document.querySelectorAll('[data-dropdown-trigger]:not([data-shadcn-init])').forEach((trigger) => {
+    trigger.dataset.shadcnInit = '';
     const menu = document.getElementById(trigger.dataset.dropdownTrigger);
     if (!menu) return;
 

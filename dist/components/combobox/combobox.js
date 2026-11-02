@@ -2,8 +2,8 @@
 // Searchable select with keyboard navigation and popover positioning.
 
 function init() {
-  document.querySelectorAll('.combobox:not([data-init])').forEach((wrapper) => {
-    wrapper.dataset.init = '';
+  document.querySelectorAll('.combobox:not([data-shadcn-init])').forEach((wrapper) => {
+    wrapper.dataset.shadcnInit = '';
     const trigger = wrapper.querySelector('.combobox-trigger');
     const valueEl = wrapper.querySelector('.combobox-value');
     const popover = wrapper.querySelector('.combobox-content');

@@ -524,8 +524,8 @@
 // Wires [data-sheet-trigger] buttons to &lt;dialog class=&quot;sheet&quot;&gt; elements.
 
 function init() {
-document.querySelectorAll('[data-sheet-trigger]:not([data-init])').forEach((trigger) =&gt; {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-sheet-trigger]:not([data-shadcn-init])').forEach((trigger) =&gt; {
+  trigger.dataset.shadcnInit = '';
   const sheet = document.getElementById(trigger.dataset.sheetTrigger);
   if (!sheet) return;
   trigger.addEventListener('click', () =&gt; {
@@ -533,8 +533,8 @@ document.querySelectorAll('[data-sheet-trigger]:not([data-init])').forEach((trig
     sheet.showModal();
   });
 });
-document.querySelectorAll('dialog.sheet:not([data-init])').forEach((sheet) =&gt; {
-  sheet.dataset.init = '';
+document.querySelectorAll('dialog.sheet:not([data-shadcn-init])').forEach((sheet) =&gt; {
+  sheet.dataset.shadcnInit = '';
   sheet.addEventListener('click', (e) =&gt; {
     if (e.target === sheet) sheet.close();
   });

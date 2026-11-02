@@ -310,8 +310,8 @@ function highlightItem(list, index) {
 }
 
 function init() {
-document.querySelectorAll('dialog.command:not([data-init])').forEach((dialog) =&gt; {
-    dialog.dataset.init = '';
+document.querySelectorAll('dialog.command:not([data-shadcn-init])').forEach((dialog) =&gt; {
+    dialog.dataset.shadcnInit = '';
     const input = dialog.querySelector('.command-input');
     const list = dialog.querySelector('.command-list');
     const empty = dialog.querySelector('.command-empty');
@@ -369,8 +369,8 @@ document.querySelectorAll('dialog.command:not([data-init])').forEach((dialog) =&
     });
   });
 
-document.querySelectorAll('[data-command-trigger]:not([data-init])').forEach((trigger) =&gt; {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-command-trigger]:not([data-shadcn-init])').forEach((trigger) =&gt; {
+  trigger.dataset.shadcnInit = '';
   const dialog = document.getElementById(trigger.dataset.commandTrigger);
   if (!dialog) return;
   trigger.addEventListener('click', () =&gt; {

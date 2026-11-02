@@ -342,8 +342,8 @@
 // Keyboard navigation and ARIA state for tree views.
 
 function init() {
-  document.querySelectorAll('.tree[role=&quot;tree&quot;]:not([data-init])').forEach((tree) =&gt; {
-    tree.dataset.init = '';
+  document.querySelectorAll('.tree[role=&quot;tree&quot;]:not([data-shadcn-init])').forEach((tree) =&gt; {
+    tree.dataset.shadcnInit = '';
     /* Keep aria-expanded in sync with &lt;details&gt; open state */
     tree.querySelectorAll('.tree-branch').forEach((details) =&gt; {
       const treeitem = details.closest('[role=&quot;treeitem&quot;]');

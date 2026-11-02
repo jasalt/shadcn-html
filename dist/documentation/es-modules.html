@@ -159,8 +159,8 @@
 // No exports — the side effect IS the module
 
 function init() {
-  document.querySelectorAll('[data-dialog-trigger]:not([data-init])').forEach((trigger) => {
-    trigger.dataset.init = '';
+  document.querySelectorAll('[data-dialog-trigger]:not([data-shadcn-init])').forEach((trigger) => {
+    trigger.dataset.shadcnInit = '';
     const dialog = document.getElementById(trigger.dataset.dialogTrigger);
     if (!dialog) return;
     trigger.addEventListener('click', () => {
@@ -214,7 +214,7 @@ new MutationObserver(init).observe(document, { childList: true, subtree: true })
         <div class="text-muted-foreground">New HTML inserted after page load needs initialization</div>
         <div class="text-muted-foreground">Each component uses a <code>MutationObserver</code> to watch for new elements</div>
         <div class="text-muted-foreground">New elements are automatically initialized — no manual re-import needed</div>
-        <div class="text-muted-foreground">Already-initialized elements are skipped via <code>data-init</code> guard</div>
+        <div class="text-muted-foreground">Already-initialized elements are skipped via <code>data-shadcn-init</code> guard</div>
       </div>
     </div>
   </div>
@@ -226,8 +226,8 @@ new MutationObserver(init).observe(document, { childList: true, subtree: true })
   <p class="text-sm text-muted-foreground mb-5">
     In an SPA or any page that dynamically updates its HTML, new elements are initialized automatically.
     Each component module sets up a <code>MutationObserver</code> that watches the document for DOM changes
-    and re-runs its initialization logic. The <code>data-init</code> attribute on every initialized element
-    prevents double-binding — the <code>:not([data-init])</code> selector ensures only new elements are
+    and re-runs its initialization logic. The <code>data-shadcn-init</code> attribute on every initialized element
+    prevents double-binding — the <code>:not([data-shadcn-init])</code> selector ensures only new elements are
     wired up. Even with many component observers on the page, each callback is cheap because the
     <code>querySelectorAll</code> guard skips already-initialized elements immediately. There is nothing to call or configure:
   </p>
@@ -239,8 +239,8 @@ new MutationObserver(init).observe(document, { childList: true, subtree: true })
     <pre style="border-radius:0;border:none;margin:0;background:transparent;flex:1;overflow:hidden;"><code class="language-javascript">// Each component module follows this pattern:
 
 function init() {
-  document.querySelectorAll('.my-component:not([data-init])').forEach((el) => {
-    el.dataset.init = '';
+  document.querySelectorAll('.my-component:not([data-shadcn-init])').forEach((el) => {
+    el.dataset.shadcnInit = '';
     // ... bind event listeners, set ARIA attributes, etc.
   });
 }

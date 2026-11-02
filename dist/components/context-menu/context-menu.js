@@ -2,8 +2,8 @@
 // Right-click context menu using the Popover API.
 
 function init() {
-  document.querySelectorAll('[data-context-menu]:not([data-init])').forEach((trigger) => {
-  trigger.dataset.init = '';
+  document.querySelectorAll('[data-context-menu]:not([data-shadcn-init])').forEach((trigger) => {
+  trigger.dataset.shadcnInit = '';
   const menu = document.getElementById(trigger.dataset.contextMenu);
   if (!menu) return;
   trigger.addEventListener('contextmenu', (e) => {

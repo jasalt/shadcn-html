@@ -2,8 +2,8 @@
 // Toggle collapse, keyboard shortcut (Cmd+B), and mobile dialog.
 
 function init() {
-document.querySelectorAll('.app-sidebar:not([data-init])').forEach((sidebar) => {
-  sidebar.dataset.init = '';
+document.querySelectorAll('.app-sidebar:not([data-shadcn-init])').forEach((sidebar) => {
+  sidebar.dataset.shadcnInit = '';
 
   // -- Toggle button → collapse/expand -----------------------
   const triggerId = sidebar.id ? `[data-sidebar-trigger="${sidebar.id}"]` : '.sidebar-trigger';
@@ -16,8 +16,8 @@ document.querySelectorAll('.app-sidebar:not([data-init])').forEach((sidebar) => 
 });
 
 // -- Mobile dialog triggers ----------------------------------
-document.querySelectorAll('[data-sidebar-mobile]:not([data-init])').forEach((trigger) => {
-  trigger.dataset.init = '';
+document.querySelectorAll('[data-sidebar-mobile]:not([data-shadcn-init])').forEach((trigger) => {
+  trigger.dataset.shadcnInit = '';
   const dialog = document.getElementById(trigger.dataset.sidebarMobile);
   if (!dialog) return;
 

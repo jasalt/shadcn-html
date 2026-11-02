@@ -388,8 +388,8 @@
 // Single-open accordion behavior using native &lt;details&gt; elements.
 
 function init() {
-  document.querySelectorAll('.accordion[data-type=&quot;single&quot;]:not([data-init])').forEach((accordion) =&gt; {
-  accordion.dataset.init = '';
+  document.querySelectorAll('.accordion[data-type=&quot;single&quot;]:not([data-shadcn-init])').forEach((accordion) =&gt; {
+  accordion.dataset.shadcnInit = '';
   const items = accordion.querySelectorAll('.accordion-item');
   const collapsible = accordion.hasAttribute('data-collapsible');
   items.forEach((item) =&gt; {

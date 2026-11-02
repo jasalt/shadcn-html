@@ -4,8 +4,8 @@
 // Live region announces position changes to screen readers.
 
 function init() {
-document.querySelectorAll('.sortable:not([data-init])').forEach((list) => {
-  list.dataset.init = '';
+document.querySelectorAll('.sortable:not([data-shadcn-init])').forEach((list) => {
+  list.dataset.shadcnInit = '';
 
   const isHorizontal = list.dataset.orientation === 'horizontal';
   const NEXT_KEY = isHorizontal ? 'ArrowRight' : 'ArrowDown';

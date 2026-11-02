@@ -166,8 +166,16 @@ Use modern ECMAScript (ES modules, arrow functions, `const`/`let`, etc.) —
 no libraries, no frameworks.
 
 All `querySelectorAll` loops that add event listeners **must** guard against
-double-initialization using `:not([data-init])` in the selector and setting
-`element.dataset.init = ''` as the first line inside the loop.
+double-initialization using `:not([data-shadcn-init])` in the selector and
+setting `element.dataset.shadcnInit = ''` as the first line inside the loop.
+
+The marker is namespaced on purpose. `data-*` is a namespace shared with every
+other script on the page, and a generic name like `data-init` is very likely to
+be claimed by something else. Datastar, for instance, has a `data-init`
+attribute plugin: when it sees the empty value this guard writes, it raises
+`ValueRequired` and stops binding the whole document, so unrelated
+interactivity elsewhere on the page silently dies. Never widen the marker back
+to a bare word.
 
 Component JS files wrap initialization in an `init()` function, call it once,
 then use a `MutationObserver` to auto-initialize new elements after SPA
@@ -175,8 +183,8 @@ navigation or dynamic DOM changes:
 
 ```js
 function init() {
-  document.querySelectorAll('.my-component:not([data-init])').forEach((el) => {
-    el.dataset.init = '';
+  document.querySelectorAll('.my-component:not([data-shadcn-init])').forEach((el) => {
+    el.dataset.shadcnInit = '';
     el.addEventListener('click', () => { /* … */ });
   });
 }

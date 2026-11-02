@@ -2,8 +2,8 @@
 // Manages single/multiple selection and roving tabindex across .toggle buttons.
 
 function init() {
-  document.querySelectorAll('.toggle-group:not([data-init])').forEach((group) => {
-  group.dataset.init = '';
+  document.querySelectorAll('.toggle-group:not([data-shadcn-init])').forEach((group) => {
+  group.dataset.shadcnInit = '';
   const type = group.getAttribute('data-type') || 'single';
 
   const getToggles = () => Array.from(group.querySelectorAll('.toggle:not(:disabled)'));

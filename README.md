@@ -62,6 +62,15 @@ components/
 
 Some components — like Button and Badge — are CSS-only. No JavaScript needed.
 
+## Datastar integration
+
+This checkout uses namespaced `data-shadcn-init` markers so vanilla component
+initialization does not collide with Datastar's `data-init` expression plugin.
+Datastar is optional; the component library still has no runtime dependencies.
+See [the integration guide](DATASTAR.md) for the distilled compatibility changes,
+behavior ownership, and server-patched DOM lifecycle caveats, or try the
+[standalone example](examples/datastar.html). Run `npm test` for regression checks.
+
 ## Theming
 
 Tokens are compatible with [tweakcn.com](https://tweakcn.com) theme exports. To switch themes, you just switch the token file — that's all the theme selector in the documentation site is doing.
